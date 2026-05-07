@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111827" />
+  <title>Plank Tracker</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">Daily plank</p>
+        <h1>Plank Tracker</h1>
+        <p class="muted">Timer starten, stoppen, fertig: Die Zeit wird automatisch eingetragen.</p>
+      </div>
+      <div class="streak">
+        <span id="streakDays">0</span>
+        <small>Tage Serie</small>
+      </div>
+    </section>
+
+    <section class="timer card">
+      <div id="timerDisplay" class="timer-display">00:00.0</div>
+      <div class="timer-actions">
+        <button id="startBtn" class="primary">Start</button>
+        <button id="stopBtn" disabled>Stop & eintragen</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+      </div>
+      <p id="todayStatus" class="muted center">Heute noch keine Plank eingetragen.</p>
+    </section>
+
+    <section class="card reminder">
+      <div>
+        <h2>Erinnerung</h2>
+        <p class="muted">Lokale Erinnerung, solange die Webapp aktiv/installiert ist. Für echte Push-Meldungen braucht es ein Backend.</p>
+      </div>
+      <label class="time-row">
+        Zeit
+        <input id="reminderTime" type="time" value="20:00" />
+      </label>
+      <button id="enableReminderBtn">Benachrichtigungen aktivieren</button>
+      <p id="reminderStatus" class="muted small"></p>
+    </section>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Einträge</h2>
+        <button id="clearAllBtn" class="danger ghost">Alles löschen</button>
+      </div>
+      <ul id="entriesList" class="entries"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
